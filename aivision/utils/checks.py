@@ -898,7 +898,7 @@ def check_amp(model):
     try:
         from aivision import AIVI
 
-        assert amp_allclose(AIVI("aivi26n.pt"), im)
+        assert amp_allclose(AIVI("aivi26n.yaml"), im)
         LOGGER.info(f"{prefix}checks passed ✅")
     except ConnectionError:
         LOGGER.warning(f"{prefix}checks skipped. Offline and unable to download AIVI26n for AMP checks. {warning_msg}")
