@@ -1,0 +1,16 @@
+
+# AIVision AIVI11-cls image classification model with ResNet18 backbone
+# Model docs: https://docs.aivision.com/models/aivi11
+# Task docs: https://docs.aivision.com/tasks/classify
+
+# Parameters
+nc: 1000 # number of classes
+
+# ResNet18 backbone
+backbone:
+  # [from, repeats, module, args]
+  - [-1, 1, TorchVision, [512, resnet18, DEFAULT, True, 2]] # truncate two layers from the end
+
+# AIVI11n head
+head:
+  - [-1, 1, Classify, [nc]] # Classify
